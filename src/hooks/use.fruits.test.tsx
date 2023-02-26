@@ -37,6 +37,7 @@ describe("Given the Hook component", () => {
   });
 
   beforeEach(() => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const mockFruitsfunctionsRepo = {
       readFruits: jest.fn(),
       readOneFruits: jest.fn(),
@@ -52,7 +53,7 @@ describe("Given the Hook component", () => {
         <>
           <button onClick={() => readFruit(1)}>read</button>
           <button onClick={() => updateFruit}>update</button>
-          <button onClick={() => createImageBitmap}>create</button>
+          <button onClick={() => createFruit}>create</button>
           <button onClick={() => deleteFruit(1)}>delete</button>
         </>
       );
