@@ -9,17 +9,17 @@ export class ApiFruitsRepo {
     const response = await fetch(this.url);
     if (!response.ok)
       throw new Error(
-        "Error HTTP " + response.status + ". " + response.statusText
+        "Error HTTP: " + response.status + ". " + response.statusText
       );
     const data = await response.json();
     return data;
   }
 
-  async readOneFruits(id: number): Promise<FruitStructure[]> {
+  async readOneFruits(id: number): Promise<FruitStructure> {
     const response = await fetch(this.url + `/${id}`);
     if (!response.ok)
       throw new Error(
-        "Error HTTP " + response.status + ". " + response.statusText
+        "Error HTTP: " + response.status + ". " + response.statusText
       );
     const data = await response.json();
     return data;
@@ -34,7 +34,7 @@ export class ApiFruitsRepo {
     });
     if (!response.ok)
       throw new Error(
-        "Error HTTP " + response.status + ". " + response.statusText
+        "Error HTTP: " + response.status + ". " + response.statusText
       );
     const data = await response.json();
     return data;
@@ -49,7 +49,7 @@ export class ApiFruitsRepo {
     });
     if (!response.ok)
       throw new Error(
-        "Error HTTP " + response.status + ". " + response.statusText
+        "Error HTTP: " + response.status + ". " + response.statusText
       );
     const data = await response.json();
     return data;
@@ -62,7 +62,7 @@ export class ApiFruitsRepo {
     });
     if (!response.ok)
       throw new Error(
-        "Error HTTP " + response.status + ". " + response.statusText
+        "Error HTTP: " + response.status + ". " + response.statusText
       );
     // const data = await response.json();
     // return data;

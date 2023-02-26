@@ -109,9 +109,7 @@ describe("Given the fruitReducer", () => {
   });
   describe("When we make the deleteCreator", () => {
     test("Then it should return the mock state", () => {
-      const mockDelete = { id: 1, name: "Apple", color: "red", weight: 1 };
-
-      const action = ac.deleteCreator(mockDelete);
+      const action = ac.deleteCreator(1);
       const element = fruitReducer(mockFruitState, action);
       expect(element).toEqual({
         fruit: {},

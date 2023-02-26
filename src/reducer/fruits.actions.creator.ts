@@ -8,4 +8,6 @@ export const readOneCreator = createAction<FruitStructure>(
 );
 export const updateCreator = createAction<FruitStructure>(fruitActions.update);
 export const createCreator = createAction<FruitStructure>(fruitActions.create);
-export const deleteCreator = createAction<FruitStructure>(fruitActions.delete);
+export const deleteCreator = createAction<FruitStructure["id"]>(
+  fruitActions.delete
+);

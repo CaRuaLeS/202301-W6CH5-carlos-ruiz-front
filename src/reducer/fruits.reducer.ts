@@ -32,7 +32,7 @@ export const fruitReducer = createReducer(initialState, (builder) => {
   }));
   builder.addCase(ac.deleteCreator, (state, { payload }) => ({
     ...state,
-    fruits: state.fruits.filter((item) => item.id !== payload.id),
+    fruits: state.fruits.filter((item) => item.id !== payload),
   }));
   builder.addDefaultCase((state) => state);
 });
