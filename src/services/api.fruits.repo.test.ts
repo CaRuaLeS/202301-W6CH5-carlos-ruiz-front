@@ -1,10 +1,10 @@
 import { FruitStructure } from "../model/fruit";
-import { ApiFruitsRepo } from "./api.fruits.repo";
+import { FruitsRepo } from "./api.fruits.repo";
 
 describe("Given a class to build api methods", () => {
-  let repo: ApiFruitsRepo;
+  let repo: FruitsRepo;
   beforeEach(() => {
-    repo = new ApiFruitsRepo();
+    repo = new FruitsRepo();
   });
   describe("When the readFruits method is called", () => {
     test("Then if it is ok, it should return an array", async () => {

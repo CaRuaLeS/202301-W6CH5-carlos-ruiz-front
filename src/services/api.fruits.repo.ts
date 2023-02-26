@@ -1,6 +1,6 @@
 import { FruitStructure } from "../model/fruit";
 
-export class ApiFruitsRepo {
+export class FruitsRepo {
   url: string;
   constructor() {
     this.url = "http://localhost:4500/fruits";
@@ -41,7 +41,7 @@ export class ApiFruitsRepo {
   }
 
   async create(info: FruitStructure): Promise<FruitStructure> {
-    const url = this.url + `/${info.id}`;
+    const url = this.url;
     const response = await fetch(url, {
       method: "POST",
       body: JSON.stringify(info),
