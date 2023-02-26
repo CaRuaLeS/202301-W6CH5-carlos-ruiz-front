@@ -1,14 +1,11 @@
 import { SyntheticEvent, useMemo } from "react";
-import { useDispatch } from "react-redux";
 import { useFruits } from "../../hooks/use.fruits";
-import { Fruit, FruitStructure } from "../../model/fruit";
+import { Fruit } from "../../model/fruit";
 import { FruitsRepo } from "../../services/api.fruits.repo";
-import { AppDispatch } from "../../store/store";
-import * as ac from "../../reducer/fruits.actions.creator";
 
 export function CreateFruit() {
   const repo = useMemo(() => new FruitsRepo(), []);
-  const { fruits, createFruit } = useFruits(repo);
+  const { createFruit } = useFruits(repo);
 
   const handleSubmit = (event: SyntheticEvent) => {
     event.preventDefault();
@@ -22,7 +19,6 @@ export function CreateFruit() {
       Number(inputs[3].value)
     );
     createFruit(newData);
-    console.log("Created: " + newData);
     formInfo.reset();
   };
 

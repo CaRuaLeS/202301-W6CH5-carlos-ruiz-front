@@ -9,8 +9,6 @@ export function Home() {
   const repo = useMemo(() => new FruitsRepo(), []);
   const { fruits } = useFruits(repo);
 
-  console.log(fruits.fruits);
-
   return (
     <>
       <h1>List of fruits:</h1>
