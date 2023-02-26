@@ -64,7 +64,5 @@ export class FruitsRepo {
       throw new Error(
         "Error HTTP: " + response.status + ". " + response.statusText
       );
-    // const data = await response.json();
-    // return data;
   }
 }
