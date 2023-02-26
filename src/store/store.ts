@@ -1,8 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { fruitReducer } from "../reducer/fruits.reducer";
 
 export const store = configureStore({
   reducer: {
-    // counter: counterReducer,
+    fruit: fruitReducer,
   },
 });
 
