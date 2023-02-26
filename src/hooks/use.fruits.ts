@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { ApiFruitsRepo as FruitsRepo } from "../services/api.fruits.repo";
+import { FruitsRepo } from "../services/api.fruits.repo";
 import { AppDispatch, RootState } from "../store/store";
 import * as ac from "../reducer/fruits.actions.creator";
 import { FruitStructure } from "../model/fruit";
