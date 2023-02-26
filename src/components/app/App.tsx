@@ -9,7 +9,7 @@ export type MenuOption = {
   path: string;
 };
 
-const menuOptions: MenuOption[] = [
+export const menuOptions: MenuOption[] = [
   { label: "Home", path: "/home" },
   { label: "New fruit", path: "/create" },
 ];
