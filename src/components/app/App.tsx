@@ -1,6 +1,8 @@
 import React from "react";
 import { Menu } from "../app-menu/app-menu";
 import { AppRouter } from "../app-router/app-router";
+import { Header } from "../header/header";
+import "./App.css";
 
 export type MenuOption = {
   label: string;
@@ -15,8 +17,9 @@ const menuOptions: MenuOption[] = [
 function App() {
   return (
     <>
-      <h1>Fruits</h1>
-      <Menu options={menuOptions}></Menu>
+      <Header>
+        <Menu options={menuOptions}></Menu>
+      </Header>
       <AppRouter menuOptions={menuOptions}></AppRouter>
     </>
   );
