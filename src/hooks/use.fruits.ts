@@ -33,7 +33,7 @@ export function useFruits(repo: FruitsRepo) {
 
   const createFruit = async (info: FruitStructure) => {
     try {
-      const data = await repo.create(info);
+      const data = await repo.createFruits(info);
       dispatch(ac.createCreator(data));
     } catch (error) {
       console.error((error as Error).message);
@@ -42,7 +42,7 @@ export function useFruits(repo: FruitsRepo) {
 
   const updateFruit = async (info: FruitStructure) => {
     try {
-      const data = await repo.update(info);
+      const data = await repo.updateFruits(info);
       dispatch(ac.updateCreator(data));
     } catch (error) {
       console.error((error as Error).message);
@@ -51,7 +51,7 @@ export function useFruits(repo: FruitsRepo) {
 
   const deleteFruit = async (id: number) => {
     try {
-      await repo.delete(id);
+      await repo.deleteFruits(id);
       dispatch(ac.deleteCreator(id));
     } catch (error) {
       console.log((error as Error).message);

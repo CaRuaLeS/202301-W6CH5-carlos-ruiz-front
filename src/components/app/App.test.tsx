@@ -1,14 +1,23 @@
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import { Provider } from "react-redux";
+import { MemoryRouter } from "react-router-dom";
 import { store } from "../../store/store";
+import { Header } from "../header/header";
 import App from "./App";
 
-test("renders learn react link", () => {
-  render(
-    <Provider store={store}>
-      <App />
-    </Provider>
-  );
-  const element = screen.getByRole("heading");
-  expect(element).toBeInTheDocument();
+jest.mock("../Header/header");
+
+describe("Given the App component", () => {
+  describe("When it renders", () => {
+    test("Then it is in the document", () => {
+      render(
+        <Provider store={store}>
+          <MemoryRouter>
+            <App />
+          </MemoryRouter>
+        </Provider>
+      );
+      expect(Header).toHaveBeenCalled();
+    });
+  });
 });

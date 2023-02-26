@@ -25,7 +25,7 @@ export class FruitsRepo {
     return data;
   }
 
-  async update(info: FruitStructure): Promise<FruitStructure> {
+  async updateFruits(info: FruitStructure): Promise<FruitStructure> {
     const url = this.url + `/${info.id}`;
     const response = await fetch(url, {
       method: "PATCH",
@@ -40,7 +40,7 @@ export class FruitsRepo {
     return data;
   }
 
-  async create(info: FruitStructure): Promise<FruitStructure> {
+  async createFruits(info: FruitStructure): Promise<FruitStructure> {
     const url = this.url;
     const response = await fetch(url, {
       method: "POST",
@@ -55,7 +55,7 @@ export class FruitsRepo {
     return data;
   }
 
-  async delete(id: number): Promise<void> {
+  async deleteFruits(id: number): Promise<void> {
     const url = this.url + `/${id}`;
     const response = await fetch(url, {
       method: "DELETE",

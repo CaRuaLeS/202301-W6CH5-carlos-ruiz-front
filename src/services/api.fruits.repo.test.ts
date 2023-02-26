@@ -46,7 +46,9 @@ describe("Given a class to build api methods", () => {
         ok: true,
         json: jest.fn().mockResolvedValue({ id: 2 }),
       });
-      const result = await repo.update({ id: 2 } as unknown as FruitStructure);
+      const result = await repo.updateFruits({
+        id: 2,
+      } as unknown as FruitStructure);
       expect(result).toEqual({ id: 2 });
     });
     test("Then if it is not ok, it should return an error", async () => {
@@ -55,7 +57,7 @@ describe("Given a class to build api methods", () => {
         json: jest.fn(),
       });
       await expect(
-        repo.update({ id: 1 } as unknown as FruitStructure)
+        repo.updateFruits({ id: 1 } as unknown as FruitStructure)
       ).rejects.toThrowError();
     });
   });
@@ -65,7 +67,7 @@ describe("Given a class to build api methods", () => {
         ok: true,
         json: jest.fn().mockResolvedValue({ id: 1, test: "test" }),
       });
-      const result = await repo.create({
+      const result = await repo.createFruits({
         id: 2,
         test: "test-2",
       } as unknown as FruitStructure);
@@ -77,7 +79,7 @@ describe("Given a class to build api methods", () => {
         json: jest.fn(),
       });
       await expect(
-        repo.create({ id: 1 } as unknown as FruitStructure)
+        repo.createFruits({ id: 1 } as unknown as FruitStructure)
       ).rejects.toThrowError();
     });
   });
@@ -87,7 +89,7 @@ describe("Given a class to build api methods", () => {
         ok: true,
         json: jest.fn().mockResolvedValue({ id: 1, test: "test" }),
       });
-      const result = await repo.delete(1);
+      const result = await repo.deleteFruits(1);
       expect(result).toBe(undefined);
     });
     test("Then if it is not ok, it should return an error", async () => {
@@ -95,7 +97,7 @@ describe("Given a class to build api methods", () => {
         ok: false,
         json: jest.fn(),
       });
-      await expect(repo.delete(1)).rejects.toThrowError();
+      await expect(repo.deleteFruits(1)).rejects.toThrowError();
     });
   });
 });
